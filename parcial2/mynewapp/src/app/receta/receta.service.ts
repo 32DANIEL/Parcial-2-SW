@@ -2,12 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Receta } from './receta';
-
+import { environment } from '../environments/environment.prod';
 @Injectable({
   providedIn: 'root',
 })
 export class RecetaService {
-  private apiUrl = 'https://gist.githubusercontent.com/VivianGomez/e65c117a4809355fbb53c37cb8fe1d44/raw/';
+  private apiUrl = environment.baseUrl + 'recipes';
 
   constructor(private http: HttpClient) {}
   getRecetas(): Observable<Receta[]> {

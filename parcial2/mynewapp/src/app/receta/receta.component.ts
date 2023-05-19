@@ -29,4 +29,16 @@ export class RecetaComponent implements OnInit {
   ngOnInit(){
       this.getRecetas();
   }
+
+  getCalProm() {
+    return (
+      this.recetas.reduce((acc, receta) => acc + receta.estrellas, 0) / this.recetas.length
+    ).toFixed(2);
+  }
+
+  getTotalOp() {
+    return this.recetas.reduce(
+      (acc, receta) => acc + receta.cantidadOpiniones,0
+    );
+  }
 }

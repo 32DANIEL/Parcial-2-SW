@@ -1,0 +1,40 @@
+<div *ngIf="selected">
+  <app-receta-detail [recetaDetail]="selectedReceta"></app-receta-detail>
+</div>
+<div class="container">
+
+  <hr />
+
+  <p>
+    ** La calificación promedio es {{ getCalProm() }} con un registro
+    de {{ getTotalOp () }} opiniones **
+  </p>
+
+  <div class="row">
+    <div class="col-4 my-3" *ngFor="let x of recetas">
+      <div class="card mb-3 p-2" style="width: 20rem; height: 28rem">
+        <h5 class="card-title p-1">{{ x.nombre }}</h5>
+        <img src="{{ x.imagen }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <p class="card-text mb-0">
+
+            Calificación: {{ x.estrellas }} de
+            {{ x.cantidadOpiniones }} opiniones.
+
+          </p>
+          <p class="card-text mb-0">
+            Duración: {{ x.duracion }} l Dificultad: {{ x.dificultad }}
+          </p>
+          <p class="card-text">Por:  {{ x.autorReceta }}</p>
+          <a
+            href="#"
+            class="btn"
+            style="background-color: #f16194"
+            (click)="onSelected(x)" >Ver más</a
+          >
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

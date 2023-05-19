@@ -1,30 +1,41 @@
 export class Receta {
-  id:number
+
+  id: number;
   nombre: string;
-  imagen: string;
-  calificacion: number;
-  cantidad_opiniones: number;
-  duracion: number;
+  descripcion: string;
   dificultad: string;
-  autor: string;
+  duracion: number;
+  ingredientes: string;
+  categoria: string;
+  imagen: string;
+  estrellas: number;
+  cantidadOpiniones: number;
+  autorReceta: string;
 
   constructor(
-    id:number,
+    id: number,
     nombre: string,
-    imagen: string,
-    calificacion: number,
-    cantidad_opiniones: number,
-    duracion: number,
+    descripcion: string,
     dificultad: string,
-    autor: string
+    duracion: number,
+    ingredientes: string,
+    categoria: string,
+    imagen: string,
+    estrellas: number,
+    cantidadOpiniones: number,
+    autorReceta: string
   ) {
     this.id = id;
     this.nombre = nombre;
-    this.imagen = imagen;
-    this.calificacion = calificacion;
-    this.cantidad_opiniones = cantidad_opiniones;
-    this.duracion = duracion;
+    this.descripcion = descripcion;
     this.dificultad = dificultad;
-    this.autor = autor
+    this.duracion = duracion;
+    this.ingredientes = ingredientes;
+    this.categoria = categoria;
+    this.imagen = imagen;
+    this.estrellas = estrellas;
+    this.cantidadOpiniones = cantidadOpiniones;
+    this.autorReceta = autorReceta;
   }
+
 }
